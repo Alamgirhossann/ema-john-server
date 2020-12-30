@@ -18,6 +18,10 @@ client.connect(err => {
   const ordersCollection = client.db(`${process.env.DB_NAME}`).collection("orders");
  console.log('database connected');
 
+ app.get('/', (req, res)=>{
+     res.send('Hello, Friends from db I am working')
+ })
+
 app.post('/addProducts', (req, res) =>{
     const products = req.body;
     console.log(products);
